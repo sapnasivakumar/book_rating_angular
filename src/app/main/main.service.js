@@ -8,16 +8,13 @@
   function authorCreService($http, $q, $log, toastr) {
 
     var service = {
-      authorCreation: authorCreation
+      authorCreation: authorCreation,
+      authorListFetch: authorListFetch
     };
 
     return service;
 
     function authorCreation(data) {
-      // var data = {
-      //   "name": "sneha ",
-      //   "bio": "snehabio"
-      // };
       console.log("printing the data #####", data);
       return $http.post("http://localhost:8000/authors", data)
         .then(authorCreated)
@@ -35,6 +32,25 @@
         return $q.reject(error);
       }
 
+
+    }
+
+    function authorListFetch() {
+      return $http.get("http://localhost:8000/authors")
+        .then(authorListFetched)
+        .catch(authorListFetchError);
+
+
+      function authorListFetched(response) {
+        console.log("successful author list fetched ############", response.data);
+        return response;
+      }
+
+      function authorListFetchError(error) {
+        $log.error('XHR Failed for author list fetching');
+        toastr.error("Error occurred while fetching author list");
+        return $q.reject(error);
+      }
 
     }
   }

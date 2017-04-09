@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+
+
+  <div class="jumbotron text-center">
+    <h4>Add a new book !!!</h4>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <form role="form" class="author-form" name="book.userForm" ng-submit="book.bookCreation()" novalidate>
+            <div class="form-group" ng-class="{ 'has-error' : book.userForm.name.$invalid && !book.userForm.name.$pristine }">
+              <input placeholder="Name" type="text" name="name" class="form-control mr5" id="bookname" ng-model="book.data.name" required>
+              <p ng-show="book.userForm.name.$invalid && !book.userForm.name.$pristine" class="help-block">Book name is required.</p>
+            </div>
+
+            <div class="form-group">
+              <input placeholder="ISBN" type="number" class="form-control mr5" id="isbn" ng-model="book.data.isbn"/>
+            </div>
+            <div class="form-group">
+              <input placeholder="Description" type="text" class="form-control mr5" id="description" ng-model="book.data.description"/>
+            </div>
+            <div class="form-group">
+              <select name="Author" ng-model="book.data.author_id">
+                <option ng-repeat="author in book.authorData" ng-value="author.id">{{author.name}}</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <input placeholder="Rating" type="number" class="form-control mr5" id="Rating" ng-model="book.data.rating"/>
+            </div>
+            <button class="btn btn-success" ng-disabled="main.userForm.$invalid">
+              Add Author
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
