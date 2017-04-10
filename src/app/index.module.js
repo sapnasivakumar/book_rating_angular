@@ -2,6 +2,6 @@
   'use strict';
 
   angular
-    .module('goodReadsAngular', ['ngAnimate', 'ui.router', 'toastr']);
+    .module('goodReadsAngular', ['ngAnimate', 'ui.router', 'toastr', 'environment']);
 
 })();

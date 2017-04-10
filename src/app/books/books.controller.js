@@ -6,10 +6,13 @@
     .controller('BookCreation', BookCreation);
 
   /** @ngInject */
-  function BookCreation(toastr, bookCreationService, authorCreationService) {
+  function BookCreation(toastr, bookCreationService, authorCreationService, envService) {
     var vm = this;
     vm.data = {};
 
+    var environment = envService.get();
+
+    console.log("printing the environment####",environment);
     authorCreationService.authorListFetch()
       .then(function(results) {
         vm.authorData = results.data;

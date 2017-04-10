@@ -5,18 +5,27 @@
     .module('goodReadsAngular')
     .factory('authorCreationService', authorCreService);
 
-  function authorCreService($http, $q, $log, toastr) {
+  function authorCreService($http, $q, $log, toastr, envService) {
 
     var service = {
       authorCreation: authorCreation,
       authorListFetch: authorListFetch
     };
 
+
+
+    var apiUrl = envService.read('apiUrl');
+    console.log("printing the apiurl $$$$$$$",apiUrl);
+
+
     return service;
+
+
+
 
     function authorCreation(data) {
       console.log("printing the data #####", data);
-      return $http.post("http://localhost:8000/authors", data)
+      return $http.post(envService.read('apiUrl') + 'authors', data)
         .then(authorCreated)
         .catch(authorCreationError);
 
@@ -36,7 +45,7 @@
     }
 
     function authorListFetch() {
-      return $http.get("http://localhost:8000/authors")
+      return $http.get(envService.read('apiUrl') + 'authors')
         .then(authorListFetched)
         .catch(authorListFetchError);
 

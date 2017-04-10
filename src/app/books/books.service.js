@@ -8,11 +8,15 @@
     .module('goodReadsAngular')
     .factory('bookCreationService', bookCreService);
 
-  function bookCreService($http, $q, $log, toastr) {
+  function bookCreService($http, $q, $log, toastr, envService) {
 
     var service = {
       bookCreation: bookCreation
     };
+
+    var apiUrl = envService.read('apiUrl');
+    var t = apiUrl+'books';
+    console.log("printing the apiurl 11111111",t);
 
     return service;
 
@@ -25,7 +29,7 @@
         "rating": 3
       };
       console.log("printing the data #####", formData);
-      return $http.post("http://localhost:8000/books", formData)
+      return $http.post(apiUrl+'books', formData)
         .then(bookCreated)
         .catch(bookCreationError);
 
