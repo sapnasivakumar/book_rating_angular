@@ -45,6 +45,7 @@
     }
 
     function authorListFetch() {
+      console.log("in the author fetch");
       return $http.get(envService.read('apiUrl') + 'authors')
         .then(authorListFetched)
         .catch(authorListFetchError);

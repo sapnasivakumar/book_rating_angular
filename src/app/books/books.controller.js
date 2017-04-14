@@ -9,29 +9,22 @@
   function BookCreation(toastr, bookCreationService, authorCreationService, envService) {
     var vm = this;
     vm.data = {};
-
-    var environment = envService.get();
-
-    console.log("printing the environment####",environment);
     authorCreationService.authorListFetch()
       .then(function(results) {
         vm.authorData = results.data;
-        // toastr.info("Author List fetched successfully");
+        console.log("authordata%%%%%",vm.authorData);
       }, function(response){
         vm.authorFetchError = response.status + "=" +response.data.message;
-        // toastr.info("Error in fetching the author list");
       });
 
     vm.bookCreation = function () {
       bookCreationService.bookCreation(vm.data)
         .then(function(results) {
-          // console.log("inside the then part of the controller");
-          vm.newBook = results;
+          vm.newBook = results.data;
+          console.log("newBook$$$$$$$",vm.newBook);
           toastr.info("Added Author successfully");
-          // console.log("vm author id ", vm.data.author_id);
           vm.reset();
         }, function(response){
-          // console.log("inside the error in controller@@@@@");
           vm.bookCreationError = response.status + "=" +response.data.message;
           toastr.info("Error in adding a new author");
         });
