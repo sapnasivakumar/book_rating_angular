@@ -11,17 +11,8 @@
       authorCreation: authorCreation,
       authorListFetch: authorListFetch
     };
-
-
-
     var apiUrl = envService.read('apiUrl');
-    console.log("printing the apiurl $$$$$$$",apiUrl);
-
-
     return service;
-
-
-
 
     function authorCreation(data) {
       console.log("printing the data #####", data);
