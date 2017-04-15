@@ -26,6 +26,13 @@ var sample_author_list = {
 };
 
 var sample_new_book = {
+    "name": "book1",
+    "isbn": 123,
+    "description": "adadada",
+    "author_id": 2,
+    "rating": 3
+};
+var sample_new_book_nested = {
   data: {
     "name": "book1",
     "isbn": 123,

@@ -21,7 +21,7 @@
         var data;
         $httpBackend.when('POST', 'http://localhost:8000/books').respond(200, sample_new_book);
         bookCreService.bookCreation({}).then(function(response){
-          data= response.data.data;
+          data= response.data;
         });
         $httpBackend.flush();
         expect(data.name).toEqual("book1");

@@ -23,7 +23,7 @@
       it('should create a new book entry', function(){
         spyOn(vm, "reset").and.returnValue("");
         vm.bookCreation();
-        deferred.resolve(sample_new_book);
+        deferred.resolve(sample_new_book_nested);
         $scope.$apply();
         expect(vm.newBook.name).toEqual("book1");
       });

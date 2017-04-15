@@ -16,13 +16,6 @@
     return service;
 
     function bookCreation(formData) {
-      var data = {
-        "name": "book1 ",
-        "isbn": "123",
-        "description": "adadada",
-        "author_id": 2,
-        "rating": 3
-      };
       return $http.post(apiUrl+'books', formData)
         .then(bookCreated)
         .catch(bookCreationError);
