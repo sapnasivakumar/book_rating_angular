@@ -1,3 +1,10 @@
+var sample_new_author = {
+  "name": "nmjk",
+  "bio":"fsxzc"
+};
+
+
+
 var sample_author_list = {
   data: [
     {
