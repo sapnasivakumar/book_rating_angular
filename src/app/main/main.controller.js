@@ -6,10 +6,9 @@
     .controller('AuthorCreation', AuthorCreation);
 
   /** @ngInject */
-  function AuthorCreation(toastr, authorCreationService, envService) {
+  function AuthorCreation(toastr, authorCreationService) {
     var vm = this;
     vm.data = {};
-    console.log(vm);
     vm.authorCreation = function () {
       authorCreationService.authorCreation(vm.data)
         .then(function(results) {

@@ -11,18 +11,15 @@
       authorCreation: authorCreation,
       authorListFetch: authorListFetch
     };
-    var apiUrl = envService.read('apiUrl');
     return service;
 
     function authorCreation(data) {
-      console.log("printing the data #####", data);
       return $http.post(envService.read('apiUrl') + 'authors', data)
         .then(authorCreated)
         .catch(authorCreationError);
 
 
       function authorCreated(response) {
-        console.log("successful author creation$$$$$$$$", response);
         return response;
       }
 
@@ -36,14 +33,12 @@
     }
 
     function authorListFetch() {
-      console.log("in the author fetch");
       return $http.get(envService.read('apiUrl') + 'authors')
         .then(authorListFetched)
         .catch(authorListFetchError);
 
 
       function authorListFetched(response) {
-        console.log("successful author list fetched ############", response.data);
         return response;
       }
 

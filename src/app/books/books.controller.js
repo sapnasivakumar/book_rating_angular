@@ -6,7 +6,7 @@
     .controller('BookCreation', BookCreation);
 
   /** @ngInject */
-  function BookCreation(toastr, bookCreationService, authorCreationService, envService) {
+  function BookCreation(toastr, bookCreationService, authorCreationService) {
     var vm = this;
     vm.data = {};
     authorCreationService.authorListFetch()
