@@ -1,9 +1,8 @@
+/* exported  sample_new_author sample_author_list sample_new_book sample_new_book_nested */
 var sample_new_author = {
   "name": "nmjk",
   "bio":"fsxzc"
 };
-
-
 
 var sample_author_list = {
   data: [

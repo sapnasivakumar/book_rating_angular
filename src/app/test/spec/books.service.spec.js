@@ -1,14 +1,15 @@
+/*global sample_new_book */
 (function() {
   'use strict';
   describe('service', function(){
     var bookCreService,
-      $httpBackend,
-      $log;
+      $httpBackend;
+      // $log;
     beforeEach(module('goodReadsAngular'));
     beforeEach(inject(function(_bookCreationService_, _$httpBackend_, _$log_){
       bookCreService = _bookCreationService_;
       $httpBackend = _$httpBackend_;
-      $log = _$log_;
+      // $log = _$log_;
     }));
 
     describe('bookCreation function', function(){

@@ -1,14 +1,15 @@
+/*global sample_new_author*/
 (function() {
   'use strict';
   describe('service', function(){
     var authorCreService,
-      $httpBackend,
-      $log;
+      $httpBackend;
+      // $log;
     beforeEach(module('goodReadsAngular'));
     beforeEach(inject(function(_authorCreationService_, _$httpBackend_, _$log_){
       authorCreService = _authorCreationService_;
       $httpBackend = _$httpBackend_;
-      $log = _$log_;
+      // $log = _$log_;
     }));
 
     describe('authorCreation function', function(){

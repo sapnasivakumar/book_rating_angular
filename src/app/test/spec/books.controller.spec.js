@@ -1,3 +1,4 @@
+/*global sample_new_book_nested sample_author_list */
 (function() {
   'use strict';
 

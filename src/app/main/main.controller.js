@@ -3,7 +3,7 @@
 
   angular
     .module('goodReadsAngular')
-    .controller('AuthorCreation', AuthorCreation);
+    .controller('AuthorCreationController', AuthorCreation);
 
   /** @ngInject */
   function AuthorCreation(toastr, authorCreationService) {

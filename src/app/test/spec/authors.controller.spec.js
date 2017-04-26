@@ -1,3 +1,4 @@
+/*global sample_new_author*/
 (function() {
   'use strict';
 

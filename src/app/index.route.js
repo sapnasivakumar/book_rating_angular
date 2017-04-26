@@ -11,13 +11,13 @@
     .state('home', {
       url: '/',
       templateUrl: 'app/main/main.html',
-      controller: 'AuthorCreation',
+      controller: 'AuthorCreationController',
       controllerAs: 'main'
     })
   .state('book', {
       url: '/books',
       templateUrl: 'app/books/books.html',
-      controller: 'BookCreation',
+      controller: 'BookCreationController',
       controllerAs: 'book'
     });
 

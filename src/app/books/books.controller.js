@@ -1,9 +1,10 @@
+
 (function() {
   'use strict';
 
   angular
     .module('goodReadsAngular')
-    .controller('BookCreation', BookCreation);
+    .controller('BookCreationController', BookCreation);
 
   /** @ngInject */
   function BookCreation(toastr, bookCreationService, authorCreationService) {
